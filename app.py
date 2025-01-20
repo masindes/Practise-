@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from sqlalchemy_serializer import serializer
@@ -20,6 +20,18 @@ class product (db.Model):
 
 def __repr__(self):
     return f"<product name:{self.name} price:{self.price} category:{self.category}>"
+
+@app.route("/")
+def get_products():
+    products = product.query.all()
+    return jsonify([
+        {
+            "id" : product.id,
+            "name" : product.name,
+            "price" : product.price,
+            "category" : product.category
+        }for product in products
+    ])
 
 if __name__ == "__main__":
     app.run(debug=True)
