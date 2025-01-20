@@ -10,4 +10,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICAFTIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app,db)
 
-class products =
+class product (db.Model):
+    __tablename__ = 'products'
+    id = db.Column(db.Indeger,primary_key = True)
+    name = db.Column(db.String(30),nullabe = False)
+    price = db.Column(db.Indeger,nullalbe = False)
+    category = db.Colunm(db.String(40),nullable = False)
+    
