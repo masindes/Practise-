@@ -15,8 +15,8 @@ class product (db.Model):
     __tablename__ = 'products'
     id = db.Column(db.Integer,primary_key = True)
     name = db.Column(db.String(30),nullable = False)
-    price = db.Column(db.Integer,nullalble = False)
-    category = db.Colunm(db.String(40),nullable = False)
+    price = db.Column(db.Integer,nullable = False)
+    category = db.Column(db.String(40),nullable = False)
 
 def __repr__(self):
     return f"<product name:{self.name} price:{self.price} category:{self.category}>"
