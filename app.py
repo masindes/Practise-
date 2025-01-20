@@ -33,6 +33,12 @@ def get_products():
         }for product in products
     ])
 
+@app.route("/Home")
+def home ():
+    return "<h1>Welcome to our page.Stay tuned, sharon will keep you updated</h1>"
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 
