@@ -16,4 +16,6 @@ class product (db.Model):
     name = db.Column(db.String(30),nullabe = False)
     price = db.Column(db.Indeger,nullalbe = False)
     category = db.Colunm(db.String(40),nullable = False)
-    
+
+def __repr__(self):
+    return f"<product name:{self.name}, price:{self.price} ,category:{self.category}>"
